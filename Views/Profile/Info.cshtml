@@ -1,0 +1,22 @@
+@model DemoApp1.Models.Profile.ProfileModel
+
+@section AddToBody{
+    <script asp-src-include="~/js/profile/viewprofile.js"></script>
+}
+
+<div class="container">
+    <div>
+            <label>First Name: </label>
+            <span>@Model.FirstName</span>
+    </div>
+
+    <div>
+            <label>Last Name: </label>
+            <span>@Model.LastName</span>
+    </div>
+
+    <div>
+            <label>Username: </label>
+            <span>@Model.UserName</span>
+    </div>
+</div>
