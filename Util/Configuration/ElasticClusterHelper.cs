@@ -24,7 +24,7 @@ namespace DemoApp1.Util
                 
                 _elasticClient = new ElasticClient(ConnectionSettings);  
 
-                //_initIndexTemplates();
+                _initIndexTemplates();
             }
             catch(Exception ex)
             {
@@ -37,11 +37,21 @@ namespace DemoApp1.Util
             return _elasticClient;
         }
 
-        /*
+        
         private static void _initIndexTemplates()
         {                                   
-                                                                       
+            var mainIndexTemplateResponse = _elasticClient.PutIndexTemplate(ElasticConfig.IndexTemplates.Main.Name,
+                                                                    p => p.Create(true) // Only add if new, don't replace
+                                                                        .Template(ElasticConfig.IndexTemplates.Main.Template)
+                                                                        .Order(ElasticConfig.IndexTemplates.Main.Order)
+                                                                        .Mappings(ElasticConfig.IndexTemplates.Main.Mappings));
+                                                                    
+            var logIndexTemplateResponse = _elasticClient.PutIndexTemplate(ElasticConfig.IndexTemplates.Logs.Name,
+                                                    p => p.Create(true) // Only add if new, don't replace
+                                                        .Template(ElasticConfig.IndexTemplates.Logs.Template)
+                                                        .Order(ElasticConfig.IndexTemplates.Logs.Order)
+                                                        .Mappings(ElasticConfig.IndexTemplates.Logs.Mappings));                                                
         }
-        */
+        
     }
 }
