@@ -2,6 +2,11 @@
 
 @section AddToBody{
     <script asp-src-include="~/js/profile/viewprofile.js"></script>
+    <script>
+        $(document).ready(function(){
+            window.DemoApp1.ProfileInfo.Initialize({userName: '@Model.UserName'});
+        });    
+    </script>
 }
 
 <div class="container">
