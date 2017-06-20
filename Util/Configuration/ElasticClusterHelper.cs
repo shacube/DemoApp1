@@ -20,7 +20,7 @@ namespace DemoApp1.Util
                 _elasticConfig = elasticConfig;
 
                 var connectionPool = new SniffingConnectionPool(_elasticConfig.NodeUris.Select(p => new Uri(p)));            
-                ConnectionSettings = new ConnectionSettings(connectionPool).DefaultIndex(ElasticConfig.Indices.Stream.Name());          
+                ConnectionSettings = new ConnectionSettings(connectionPool).DefaultIndex(ElasticConfig.Indices.Main.Name());          
                 
                 _elasticClient = new ElasticClient(ConnectionSettings);  
 
