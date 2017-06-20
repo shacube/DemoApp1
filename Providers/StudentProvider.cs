@@ -11,7 +11,7 @@ namespace DemoApp1.Providers
     public class StudentProvider: IStudentProvider
     {                           
         private static readonly string _studentKeyFormat = CBConfig.Buckets.Students.Documents.Student.StudentKeyFormat; // student::Guid
-        private static readonly string _enrolledClassesDocPath = CBConfig.Buckets.Students.Documents.Student.Paths.EnrolledClasses_ItemDocPathFormat;  
+        private static readonly string _enrolledClassesDocPathFormat = CBConfig.Buckets.Students.Documents.Student.Paths.EnrolledClasses_ItemDocPathFormat;  
         private readonly IServiceWorker<IBucket, IStudent, Student, IOperationResult<Student>, IOperationResult<ICollection<Student>>, IDocumentFragment<Student>> _studentRepoWorker;        
         public StudentProvider(IServiceWorker<IBucket, IStudent, Student, IOperationResult<Student>, IOperationResult<ICollection<Student>>, IDocumentFragment<Student>> studentRepoWorker)
         {
