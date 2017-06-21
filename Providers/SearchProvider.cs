@@ -66,7 +66,7 @@ namespace DemoApp1.Providers
             var updateReqLog = new BulkIndexOperation<Activity<string>>(new Activity<string>(){ Id = Guid.NewGuid().ToString(),
                                                                                           Timestamp = DateTime.UtcNow,
                                                                                           Payload = new ActivityPayload<string>()
-                                                                                                    { Data = string.Format($"SearchProvider: Delete(), Deletd Class - {JsonConvert.SerializeObject(removedClass)}")},
+                                                                                                    { Data = string.Format($"SearchProvider: Delete(), Deleted Class - {JsonConvert.SerializeObject(removedClass)}")},
                                                                                           ActivityType = ActivityType.ClassDelete});
             updateReqLog.Index = ElasticConfig.Indices.Logs.Name();
             bulkOps.Add(updateReqLog);
@@ -125,12 +125,12 @@ namespace DemoApp1.Providers
             var updateReqLog = new BulkIndexOperation<Activity<string>>(new Activity<string>(){ Id = Guid.NewGuid().ToString(),
                                                                                           Timestamp = DateTime.UtcNow,
                                                                                           Payload = new ActivityPayload<string>()
-                                                                                                    { Data = string.Format($"SearchProvider: Delete(), Deletd Class - {JsonConvert.SerializeObject(removedClass)}")},
+                                                                                                    { Data = string.Format($"SearchProvider: Delete(), Deleted Student - {JsonConvert.SerializeObject(removedStudent)}")},
                                                                                           ActivityType = ActivityType.StudentDelete});
             updateReqLog.Index = ElasticConfig.Indices.Logs.Name();
             bulkOps.Add(updateReqLog);
 
-            await _elasticProvider.BulkAsync(new BulkRequest() { Operations = bulkOps } );        
+            await _elasticProvider.BulkAsync(new BulkRequest() { Operations = bulkOps });        
         }
 
         public async Task<ISearchResponse<ICollection<IClass>>> Search(IClassSearchRequest searchParams)
