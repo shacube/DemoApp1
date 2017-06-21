@@ -276,7 +276,7 @@ namespace DemoApp1.Controllers
         public async Task<ObjectResult> Enroll(string studentId, string classCode)
         {
             Guid _studentId, _classCode;   
-            var enrollTasks = new List<Task<IProviderResponse>>(); 
+            var enrollTasks = new List<Task<IProviderResponse<bool>>>(); 
             var updateIndexTasks = new List<Task>();        
 
             try
@@ -336,7 +336,7 @@ namespace DemoApp1.Controllers
         public async Task<ObjectResult> UnEnroll(string studentId, string classCode)
         {
             Guid _studentId, _classCode;   
-            var unenrollTasks = new List<Task<IProviderResponse>>(); 
+            var unenrollTasks = new List<Task<IProviderResponse<bool>>>(); 
             var updateIndexTasks = new List<Task>();        
 
             try
