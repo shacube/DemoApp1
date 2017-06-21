@@ -11,12 +11,16 @@ namespace DemoApp1
 
     public enum ActivityType
     {
-        ClassCreateEdit,
-        StudentCreateEdit,
+        ClassCreate, 
+        ClassEdit,
+        StudentCreate, 
+        StudentEdit,
         ClassDelete,
         StudentDelete,
         StudentSearch,
         ClassSearch,
+        Enroll,
+        Unenroll,
         Log
     }
 }

@@ -60,7 +60,7 @@ namespace DemoApp1
             services.AddSingleton<IClassProvider, ClassProvider>();
             services.AddSingleton<IStudentProvider, StudentProvider>();
             //services.AddSingleton<IFirehoseProvider, FirehoseProvider>();
-            //services.AddSingleton<ISearchProvider, SearchProvider>();            
+            services.AddSingleton<ISearchProvider, SearchProvider>();            
             //services.AddSingleton<IMsgQueueProvider<Activity<T>>, MsgQueueProvider>();            
             services.AddElasticService();                        
 
@@ -81,6 +81,8 @@ namespace DemoApp1
             // Validators
             services.AddSingleton<ISchemaValidator<Student>, SchemaValidator<Student>>();            
             services.AddSingleton<ISchemaValidator<Class>, SchemaValidator<Class>>();
+            services.AddSingleton<ISchemaValidator<StudentUpdateRequest>, SchemaValidator<StudentUpdateRequest>>();
+            services.AddSingleton<ISchemaValidator<ClassUpdateRequest>, SchemaValidator<ClassUpdateRequest>>();
             services.AddSingleton<ISchemaValidator<StudentSearchRequest>, SchemaValidator<StudentSearchRequest>>();            
             services.AddSingleton<ISchemaValidator<ClassSearchRequest>, SchemaValidator<ClassSearchRequest>>();
         }

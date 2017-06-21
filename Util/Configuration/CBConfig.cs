@@ -30,9 +30,7 @@ namespace DemoApp1.Util
                 public struct Documents
                 {
                     public struct Class
-                    {
-                        public const string ClassKeyFormat = @"class::{0}";    // class::{guid}, i.e. class::Guid                                                
-
+                    {                                                                     
                         public struct Paths
                         {
                             public const string EnrolledStudents_ItemDocPathFormat = @"enrolleeids.map.{0}";                                                        
